@@ -27,9 +27,30 @@
     Discover your evolutionary equivalent
   </p>
 
-  <video id="video" autoplay playsinline></video>
+  <div id="videoContainer">
+    <video
+      id="video"
+      autoplay
+      playsinline>
+    </video>
 
-  <canvas id="canvas"></canvas>
+    <canvas id="canvas"></canvas>
+
+    <div id="scanLine"></div>
+
+    <div id="hud">
+      <div class="hudCorner topLeft"></div>
+      <div class="hudCorner topRight"></div>
+      <div class="hudCorner bottomLeft"></div>
+      <div class="hudCorner bottomRight"></div>
+    </div>
+  </div>
+
+  <div id="statusPanel">
+    <p>AWAITING FACE...</p>
+    <p>LANDMARKS: 0</p>
+    <p>AI STATUS: STANDBY</p>
+  </div>
 
   <button id="analyzeBtn">
     Analyze My Face
@@ -67,6 +88,10 @@
 
     <p id="score"></p>
 
+    <button onclick="window.print()">
+      Save Result
+    </button>
+
   </div>
 
 </div>
@@ -76,39 +101,3 @@
 
 </body>
 </html>
-
-<button onclick="window.print()">
-  Save Result
-</button>
-
-<div id="videoContainer">
-
-  <video
-    id="video"
-    autoplay
-    playsinline>
-  </video>
-
-  <canvas id="canvas"></canvas>
-
-  <div id="scanLine"></div>
-
-  <div id="hud">
-
-    <div class="hudCorner topLeft"></div>
-    <div class="hudCorner topRight"></div>
-    <div class="hudCorner bottomLeft"></div>
-    <div class="hudCorner bottomRight"></div>
-
-  </div>
-
-</div>
-
-<div id="statusPanel">
-
-  <p>FACE DETECTED</p>
-  <p>LANDMARKS: 468</p>
-  <p>AI STATUS: ACTIVE</p>
-
-</div>
-
