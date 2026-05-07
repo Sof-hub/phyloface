@@ -31,9 +31,25 @@
   </button>
 
   <div id="loading" class="hidden">
+
+    <div class="scanner"></div>
+
+    <h2>ANALYZING</h2>
+
+    <div id="progressBarContainer">
+
+      <div id="progressBar"></div>
+
+    </div>
+
+    <p id="progressText">0%</p>
+
     <p id="loadingText">
-      Analyzing craniofacial topology...
+      Initializing...
     </p>
+
+    <div id="metricsLive"></div>
+
   </div>
 
   <div id="result" class="hidden">
@@ -59,3 +75,55 @@
 <button onclick="window.print()">
   Save Result
 </button>
+
+<div id="topBar">
+
+  <img
+    src="assets/logo.png"
+    id="logo"
+  >
+
+  <div id="titleBlock">
+
+    <h1>PHYLOFACE</h1>
+
+    <p>
+      Comparative Evolutionary
+      Morphology Engine
+    </p>
+
+  </div>
+
+</div>
+
+<div id="videoContainer">
+
+  <video
+    id="video"
+    autoplay
+    playsinline>
+  </video>
+
+  <canvas id="canvas"></canvas>
+
+  <div id="scanLine"></div>
+
+  <div id="hud">
+
+    <div class="hudCorner topLeft"></div>
+    <div class="hudCorner topRight"></div>
+    <div class="hudCorner bottomLeft"></div>
+    <div class="hudCorner bottomRight"></div>
+
+  </div>
+
+</div>
+
+<div id="statusPanel">
+
+  <p>FACE DETECTED</p>
+  <p>LANDMARKS: 468</p>
+  <p>AI STATUS: ACTIVE</p>
+
+</div>
+
