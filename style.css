@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #07111f;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+canvas {
+  display: none;
+}
+
+button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #b6ff00;
+  color: black;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+#result {
+  margin-top: 30px;
+  background: #10233d;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#animalImage {
+  width: 250px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+#animalName {
+  font-size: 3rem;
+}
+
+#score {
+  font-size: 1.5rem;
+  color: #b6ff00;
+}
+
+video {
+  filter:
+    contrast(1.1)
+    saturate(1.2)
+    brightness(0.95);
+}
+
+@keyframes pulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+#loadingText {
+  animation: pulse 1s infinite;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PhyloFace</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>PHYLOFACE</h1>
+
+  <p class="subtitle">
+    Discover your evolutionary equivalent
+  </p>
+
+  <video id="video" autoplay playsinline></video>
+
+  <canvas id="canvas"></canvas>
+
+  <button id="analyzeBtn">
+    Analyze My Face
+  </button>
+
+  <div id="loading" class="hidden">
+    <p id="loadingText">
+      Analyzing craniofacial topology...
+    </p>
+  </div>
+
+  <div id="result" class="hidden">
+
+    <h2 id="animalName"></h2>
+
+    <img id="animalImage">
+
+    <p id="animalDescription"></p>
+
+    <p id="score"></p>
+
+  </div>
+
+</div>
+
+<script src="animals.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
+
+<button onclick="window.print()">
+  Save Result
+</button>
