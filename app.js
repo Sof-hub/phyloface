@@ -151,24 +151,69 @@ function startFakeAnalysis(landmarks) {
 // GENERATE RESULT
 
 function generateAnimal() {
-  const animal =
-    animals[Math.floor(Math.random() * animals.length)];
 
-  const score = Math.floor(Math.random() * 20) + 80;
+  let animal;
 
-  animalName.innerText = `You Are: ${animal.name}`;
-  animalImage.src = animal.image;
-  animalDescription.innerText = animal.description;
-  scoreText.innerText = `${score}% morphological similarity`;
+  // 1% chance rare animal
+
+  if (Math.random() < 0.01) {
+
+    animal =
+      rareAnimals[
+        Math.floor(
+          Math.random() * rareAnimals.length
+        )
+      ];
+
+  } else {
+
+    animal =
+      animals[
+        Math.floor(
+          Math.random() * animals.length
+        )
+      ];
+
+  }
+
+
+
+  const score =
+    Math.floor(Math.random() * 20) + 80;
+
+
+
+  animalName.innerText =
+    `You Are: ${animal.name}`;
+
+  animalImage.src =
+    animal.image;
+
+  animalDescription.innerText =
+    animal.description;
+
+  scoreText.innerText =
+    `${score}% morphological similarity`;
+
+
 
   resultDiv.classList.remove("hidden");
 
-  const rare = Math.random();
 
-  if (rare < 0.01) {
-    animalName.innerText = "UNCLASSIFIED ENTITY";
-    animalDescription.innerText = "Evolution refuses responsibility.";
+
+  // SPECIAL EFFECT FOR RARE RESULTS
+
+  if (
+    animal.name === "UNCLASSIFIED ENTITY" ||
+    animal.name === "BIBLICALLY ACCURATE RESEARCHER" ||
+    animal.name === "REVIEWER #2"
+  ) {
+
+    document.body.style.background =
+      "radial-gradient(circle, #330000, #000000)";
+
   }
+
 }
 
 
