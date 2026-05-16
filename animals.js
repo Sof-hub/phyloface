@@ -56,200 +56,111 @@ const animals = [
     "Cute abyssal creature avoiding social interaction.",
 },
 
+];
+
 animals.push(
- 
+
 {
   name: "Proboscis Monkey",
-  image: "assets/animals/proboscis-monkey.png",
+  image: "assets/animals/proboscis-monkey.jpg",
   description:
-    "Loud tropical researcher powered entirely by chaos and potassium.",
+    "Loud tropical researcher powered entirely by chaos and potassium."
 },
 
 {
   name: "Star-Nosed Mole",
-
-  image: "assets/animals/star-nosed-mole.png",
-
+  image: "assets/animals/star-nosed-mole.jpg",
   description:
-    "Sensory overload specialist with forbidden spaghetti face.",
-
-  traits: {
-    eyeRatio: 0.18,
-    noseWidth: 0.28,
-    faceLength: 0.85
-  }
+    "Forbidden spaghetti face."
 },
 
 {
   name: "Goblin Shark",
-
-  image: "assets/animals/goblin-shark.png",
-
+  image: "assets/animals/goblin-shark.jpg",
   description:
-    "Deep-sea cryptid that should not exist but somehow got tenure.",
-
-  traits: {
-    eyeRatio: 0.16,
-    noseWidth: 0.42,
-    faceLength: 1.60
-  }
+    "Deep-sea cryptid with tenure."
 },
 
 {
   name: "Kakapo",
-
-  image: "assets/animals/kakapo.png",
-
+  image: "assets/animals/kakapo.jpg",
   description:
-    "Flightless emotional support avocado.",
-
-  traits: {
-    eyeRatio: 0.30,
-    noseWidth: 0.20,
-    faceLength: 1.10
-  }
+    "Flightless emotional support avocado."
 },
 
 {
   name: "Mantis Shrimp",
-
-  image: "assets/animals/mantis-shrimp.png",
-
+  image: "assets/animals/mantis-shrimp.jpg",
   description:
-    "Sees colors beyond human comprehension and still chooses violence.",
-
-  traits: {
-    eyeRatio: 0.28,
-    noseWidth: 0.25,
-    faceLength: 1.00
-  }
+    "Sees colors beyond human comprehension."
 },
 
 {
   name: "Leafy Seadragon",
-
-  image: "assets/animals/leafy-seadragon.png",
-
+  image: "assets/animals/leafy-seadragon.jpg",
   description:
-    "Aquatic leaf pretending to have a PhD.",
-
-  traits: {
-    eyeRatio: 0.26,
-    noseWidth: 0.22,
-    faceLength: 1.20
-  }
+    "Aquatic leaf pretending to have a PhD."
 },
 
 {
   name: "Frilled Shark",
-
-  image: "assets/animals/frilled-shark.png",
-
+  image: "assets/animals/frilled-shark.jpg",
   description:
-    "Living fossil fueled by existential dread.",
-
-  traits: {
-    eyeRatio: 0.16,
-    noseWidth: 0.35,
-    faceLength: 1.70
-  }
+    "Living fossil fueled by existential dread."
 },
 
 {
   name: "Hoatzin",
-
-  image: "assets/animals/hoatzin.png",
-
+  image: "assets/animals/hoatzin.jpg",
   description:
-    "Smells terrible yet remains deeply confident.",
-
-  traits: {
-    eyeRatio: 0.26,
-    noseWidth: 0.30,
-    faceLength: 1.30
-  }
+    "Smells terrible yet remains deeply confident."
 },
 
 {
   name: "Pangolin",
-
-  image: "assets/animals/pangolin.png",
-
+  image: "assets/animals/pangolin.jpg",
   description:
-    "Anxiety pinecone with strong introvert adaptations.",
-
-  traits: {
-    eyeRatio: 0.22,
-    noseWidth: 0.18,
-    faceLength: 1.00
-  }
+    "Anxiety pinecone with introvert adaptations."
 },
 
 {
   name: "Yeti Crab",
-
-  image: "assets/animals/yeti-crab.png",
-
+  image: "assets/animals/yeti-crab.jpg",
   description:
-    "Hydrothermal vent cryptid with luxurious arm hair.",
-
-  traits: {
-    eyeRatio: 0.18,
-    noseWidth: 0.30,
-    faceLength: 0.90
-  }
+    "Hydrothermal vent cryptid with luxurious arm hair."
 },
 
 {
   name: "Glass Frog",
-
-  image: "assets/animals/glass-frog.png",
-
+  image: "assets/animals/glass-frog.jpg",
   description:
-    "Transparent. Fragile. 100% doing its best.",
-
-  traits: {
-    eyeRatio: 0.24,
-    noseWidth: 0.20,
-    faceLength: 0.80
+    "Transparent. Fragile. 100% doing its best."
   }
-},
+}
+
 );
 
-const rareResults = [
-  
+const rareAnimals = [
+
 {
   name: "UNCLASSIFIED ENTITY",
-
-  image: "assets/animals/unclassified-entity.png",
-
+  image: "assets/animals/unclassified-entity.jpg",
   description:
-    "Evolution refuses responsibility.",
-
-  rarity: 0.005
+    "Evolution refuses responsibility."
 },
 
 {
   name: "BIBLICALLY ACCURATE RESEARCHER",
-
-  image: "assets/animals/biblically-accurate.png",
-
+  image: "assets/animals/biblically-accurate.jpg",
   description:
-    "Too many eyes detected.",
-
-  rarity: 0.002
+    "Too many eyes detected."
 },
 
 {
   name: "REVIEWER #2",
-
-  image: "assets/animals/reviewer2.png",
-
+  image: "assets/animals/reviewer2.jpg",
   description:
-    "Hostile phenotype identified.",
-
-  rarity: 0.001
+    "Hostile phenotype identified."
 }
 
-];
 ];
