@@ -56,9 +56,6 @@ const animals = [
     "Cute abyssal creature avoiding social interaction.",
 },
 
-];
-
-animals.push(
 
 {
   name: "Proboscis Monkey",
@@ -136,11 +133,7 @@ animals.push(
   description:
     "Transparent. Fragile. 100% doing its best."
   }
-}
-
-);
-
-const rareAnimals = [
+},
 
 {
   name: "UNCLASSIFIED ENTITY",
