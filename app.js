@@ -12,6 +12,16 @@ const loading = document.getElementById("loading");
 
 let latestLandmarks = null;
 
+function scrollToElement(element) {
+  setTimeout(() => {
+    const y = element.getBoundingClientRect().top + window.scrollY - 20;
+    window.scrollTo({
+      top: y,
+      behavior: "smooth"
+    });
+  }, 150);
+}
+
 function resizeCanvas() {
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
@@ -88,6 +98,7 @@ function startFakeAnalysis(landmarks) {
 
   resultDiv.classList.add("hidden");
   loading.classList.remove("hidden");
+  scrollToElement(loading);
 
   loading.scrollIntoView({
     behavior: "smooth",
@@ -170,6 +181,7 @@ function generateAnimal() {
   }
 
   resultDiv.classList.remove("hidden");
+  scrollToElement(resultDiv);
 
   resultDiv.scrollIntoView({
     behavior: "smooth",
