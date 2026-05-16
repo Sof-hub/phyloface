@@ -37,7 +37,7 @@ const animals = [
 
 {
   name: "Naked Mole Rat",
-  image: "assets/animals/molerat.jpg",
+  image: "assets/animals/molerat.png",
   description:
     "Underground lab survivor with maximum resilience.",
 },
@@ -62,77 +62,77 @@ animals.push(
 
 {
   name: "Proboscis Monkey",
-  image: "assets/animals/proboscis-monkey.jpg",
+  image: "assets/animals/proboscis-monkey.png",
   description:
     "Loud tropical researcher powered entirely by chaos and potassium."
 },
 
 {
   name: "Star-Nosed Mole",
-  image: "assets/animals/star-nosed-mole.jpg",
+  image: "assets/animals/star-nosed-mole.png",
   description:
     "Forbidden spaghetti face."
 },
 
 {
   name: "Goblin Shark",
-  image: "assets/animals/goblin-shark.jpg",
+  image: "assets/animals/goblin-shark.png",
   description:
     "Deep-sea cryptid with tenure."
 },
 
 {
   name: "Kakapo",
-  image: "assets/animals/kakapo.jpg",
+  image: "assets/animals/kakapo.png",
   description:
     "Flightless emotional support avocado."
 },
 
 {
   name: "Mantis Shrimp",
-  image: "assets/animals/mantis-shrimp.jpg",
+  image: "assets/animals/mantis-shrimp.png",
   description:
     "Sees colors beyond human comprehension."
 },
 
 {
   name: "Leafy Seadragon",
-  image: "assets/animals/leafy-seadragon.jpg",
+  image: "assets/animals/leafy-seadragon.png",
   description:
     "Aquatic leaf pretending to have a PhD."
 },
 
 {
   name: "Frilled Shark",
-  image: "assets/animals/frilled-shark.jpg",
+  image: "assets/animals/frilled-shark.png",
   description:
     "Living fossil fueled by existential dread."
 },
 
 {
   name: "Hoatzin",
-  image: "assets/animals/hoatzin.jpg",
+  image: "assets/animals/hoatzin.png",
   description:
     "Smells terrible yet remains deeply confident."
 },
 
 {
   name: "Pangolin",
-  image: "assets/animals/pangolin.jpg",
+  image: "assets/animals/pangolin.png",
   description:
     "Anxiety pinecone with introvert adaptations."
 },
 
 {
   name: "Yeti Crab",
-  image: "assets/animals/yeti-crab.jpg",
+  image: "assets/animals/yeti-crab.png",
   description:
     "Hydrothermal vent cryptid with luxurious arm hair."
 },
 
 {
   name: "Glass Frog",
-  image: "assets/animals/glass-frog.jpg",
+  image: "assets/animals/glass-frog.png",
   description:
     "Transparent. Fragile. 100% doing its best."
   }
@@ -144,21 +144,21 @@ const rareAnimals = [
 
 {
   name: "UNCLASSIFIED ENTITY",
-  image: "assets/animals/unclassified-entity.jpg",
+  image: "assets/animals/unclassified-entity.png",
   description:
     "Evolution refuses responsibility."
 },
 
 {
   name: "BIBLICALLY ACCURATE RESEARCHER",
-  image: "assets/animals/biblically-accurate.jpg",
+  image: "assets/animals/biblically-accurate.png",
   description:
     "Too many eyes detected."
 },
 
 {
   name: "REVIEWER #2",
-  image: "assets/animals/reviewer2.jpg",
+  image: "assets/animals/reviewer2.png",
   description:
     "Hostile phenotype identified."
 }
