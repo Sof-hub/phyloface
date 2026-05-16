@@ -136,113 +136,40 @@ function startFakeAnalysis(landmarks) {
     `;
 
     if (progress >= 100) {
+      clearInterval(interval);
+      loadingText.innerText = "MATCH FOUND";
 
-  clearInterval(interval);
-
-  loadingText.innerText =
-    "MATCH FOUND";
-
-
-
-  setTimeout(() => {
-
-    loading.classList.add("hidden");
-
-    analyzeFace(landmarks);
-
-  }, 1200);
-}
-
-// =========================
-// DISTANCE FUNCTION
-// =========================
-
-function dist(a, b) {
-
-  return Math.sqrt(
-
-    Math.pow(a.x - b.x, 2) +
-    Math.pow(a.y - b.y, 2)
-
-  );
-
-}
-
-
-
-// =========================
-// FACE ANALYSIS
-// =========================
-
-function analyzeFace(landmarks) {
-
-  // LEFT EYE
-  const leftEyeLeft = landmarks[33];
-  const leftEyeRight = landmarks[133];
-
-  // RIGHT EYE
-  const rightEyeLeft = landmarks[362];
-  const rightEyeRight = landmarks[263];
-
-  // FACE WIDTH
-  const faceLeft = landmarks[234];
-  const faceRight = landmarks[454];
-
-  // FACE HEIGHT
-  const forehead = landmarks[10];
-  const chin = landmarks[152];
-
-  // NOSE
-  const noseLeft = landmarks[129];
-  const noseRight = landmarks[358];
-
-
-
-  // =========================
-  // CALCULATIONS
-  // =========================
-
-  const eyeWidth =
-
-    (
-      dist(leftEyeLeft, leftEyeRight)
-      +
-      dist(rightEyeLeft, rightEyeRight)
-    ) / 2;
-
-
-
-  const faceWidth =
-    dist(faceLeft, faceRight);
-
-  const faceHeight =
-    dist(forehead, chin);
-
-  const noseWidth =
-    dist(noseLeft, noseRight);
-
-
-
-  const metrics = {
-
-    eyeRatio:
-      eyeWidth / faceWidth,
-
-    noseWidth:
-      noseWidth / faceWidth,
-
-    faceLength:
-      faceHeight / faceWidth
-
-  };
-
-
-
-  matchAnimal(metrics);
+      setTimeout(() => {
+        loading.classList.add("hidden");
+        generateAnimal();
+      }, 1200);
+    }
+  }, 350);
 
 }
 
 // GENERATE RESULT
+
+function generateAnimal() {
+  const animal =
+    animals[Math.floor(Math.random() * animals.length)];
+
+  const score = Math.floor(Math.random() * 20) + 80;
+
+  animalName.innerText = `You Are: ${animal.name}`;
+  animalImage.src = animal.image;
+  animalDescription.innerText = animal.description;
+  scoreText.innerText = `${score}% morphological similarity`;
+
+  resultDiv.classList.remove("hidden");
+
+  const rare = Math.random();
+
+  if (rare < 0.01) {
+    animalName.innerText = "UNCLASSIFIED ENTITY";
+    animalDescription.innerText = "Evolution refuses responsibility.";
+  }
+}
 
 
 function drawLandmarks(landmarks) {
