@@ -56,6 +56,8 @@ const animals = [
     "Cute abyssal creature avoiding social interaction.",
 },
 
+animals.push(
+ 
 {
   name: "Proboscis Monkey",
   image: "assets/animals/proboscis-monkey.png",
@@ -212,7 +214,10 @@ const animals = [
     faceLength: 0.80
   }
 },
+);
 
+const rareResults = [
+  
 {
   name: "UNCLASSIFIED ENTITY",
 
@@ -246,4 +251,5 @@ const animals = [
   rarity: 0.001
 }
 
+];
 ];
