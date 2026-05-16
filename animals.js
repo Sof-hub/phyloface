@@ -132,8 +132,7 @@ const animals = [
   image: "assets/animals/glass-frog.png",
   description:
     "Transparent. Fragile. 100% doing its best."
-  }
-},
+  },
 
 {
   name: "UNCLASSIFIED ENTITY",
