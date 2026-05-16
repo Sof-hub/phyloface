@@ -4,17 +4,14 @@ const ctx = canvas.getContext("2d");
 const analyzeBtn = document.getElementById("analyzeBtn");
 
 const resultDiv = document.getElementById("result");
-
 const animalName = document.getElementById("animalName");
 const animalImage = document.getElementById("animalImage");
 const animalDescription = document.getElementById("animalDescription");
 const scoreText = document.getElementById("score");
-
 const loading = document.getElementById("loading");
 
 let latestLandmarks = null;
 
-// Set canvas size
 function resizeCanvas() {
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
@@ -23,9 +20,9 @@ function resizeCanvas() {
 video.addEventListener("loadedmetadata", resizeCanvas);
 window.addEventListener("resize", resizeCanvas);
 
-// MEDIAPIPE SETUP
 const faceMesh = new FaceMesh({
-  locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`,
+  locateFile: (file) =>
+    `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`,
 });
 
 faceMesh.setOptions({
@@ -55,12 +52,14 @@ function onFaceResults(results) {
     drawLandmarks(landmarks);
     updateScannerStatus(true);
   } else {
+    latestLandmarks = null;
     updateScannerStatus(false);
   }
 }
 
 function updateScannerStatus(detected) {
   const statusPanel = document.getElementById("statusPanel");
+
   if (statusPanel) {
     statusPanel.innerHTML = detected
       ? `<p>FACE DETECTED ✓</p>
@@ -72,7 +71,6 @@ function updateScannerStatus(detected) {
   }
 }
 
-// ANALYSIS BUTTON
 analyzeBtn.addEventListener("click", () => {
   if (!latestLandmarks) {
     alert("No face detected. Please ensure your face is visible to the camera.");
@@ -83,13 +81,18 @@ analyzeBtn.addEventListener("click", () => {
 });
 
 function startFakeAnalysis(landmarks) {
-  const loading = document.getElementById("loading");
   const loadingText = document.getElementById("loadingText");
   const progressBar = document.getElementById("progressBar");
   const progressText = document.getElementById("progressText");
   const metricsLive = document.getElementById("metricsLive");
 
+  resultDiv.classList.add("hidden");
   loading.classList.remove("hidden");
+
+  loading.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
 
   const messages = [
     "Initializing phylogenetic engine...",
@@ -122,7 +125,6 @@ function startFakeAnalysis(landmarks) {
     const message = messages[Math.floor(Math.random() * messages.length)];
     loadingText.innerText = message;
 
-    // Fake live metrics
     const fakeEye = (Math.random() * 0.2 + 0.2).toFixed(2);
     const fakeNose = (Math.random() * 0.3 + 0.2).toFixed(2);
     const fakeChaos = (Math.random() * 100).toFixed(0);
@@ -145,86 +147,55 @@ function startFakeAnalysis(landmarks) {
       }, 1200);
     }
   }, 350);
-
 }
-
-// GENERATE RESULT
 
 function generateAnimal() {
   const animal = animals[Math.floor(Math.random() * animals.length)];
   const score = Math.floor(Math.random() * 20) + 80;
-  const rare = Math.random();
 
-  if (rare < 0.01) {
-    animalName.innerText = "UNCLASSIFIED ENTITY";
-    animalDescription.innerText = "Evolution refuses responsibility.";
-    animalImage.src = "";
-    scoreText.innerText = `${score}% morphological similarity`;
+  animalName.innerText = `You Are: ${animal.name}`;
+  animalImage.src = animal.image;
+  animalImage.alt = animal.name;
+  animalDescription.innerText = animal.description;
+  scoreText.innerText = `${score}% morphological similarity`;
+
+  if (
+    animal.name === "UNCLASSIFIED ENTITY" ||
+    animal.name === "BIBLICALLY ACCURATE RESEARCHER" ||
+    animal.name === "REVIEWER #2"
+  ) {
     document.body.style.background = "radial-gradient(circle, #330000, #000000)";
   } else {
-    animalName.innerText = `You Are: ${animal.name}`;
-    animalImage.src = animal.image;
-    animalDescription.innerText = animal.description;
-    scoreText.innerText = `${score}% morphological similarity`;
-
-    if (
-      animal.name === "BIBLICALLY ACCURATE RESEARCHER" ||
-      animal.name === "REVIEWER #2"
-    ) {
-      document.body.style.background = "radial-gradient(circle, #330000, #000000)";
-    } else {
-      document.body.style.background = "";
-    }
+    document.body.style.background = "";
   }
 
   resultDiv.classList.remove("hidden");
+
+  resultDiv.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
 }
 
 function drawLandmarks(landmarks) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // DRAW CONNECTIONS
   ctx.strokeStyle = "#b6ff00";
   ctx.lineWidth = 1;
 
   const connections = [
-    [0, 1],
-    [1, 2],
-    [2, 3],
-    [3, 4],
-    [5, 6],
-    [6, 7],
-    [7, 8],
-    [9, 10],
-    [10, 11],
-    [11, 12],
-    [13, 14],
-    [14, 15],
-    [15, 16],
-    [17, 18],
-    [18, 19],
-    [19, 20],
-    [21, 22],
-    [22, 23],
-    [23, 24],
-    [25, 26],
-    [26, 27],
-    [27, 28],
-    [29, 30],
-    [30, 31],
-    [31, 32],
-    [33, 34],
-    [34, 35],
-    [35, 36],
-    [37, 38],
-    [38, 39],
-    [39, 40],
-    [41, 42],
-    [42, 43],
-    [43, 44],
-    [45, 46],
-    [46, 47],
-    [47, 48],
+    [0, 1], [1, 2], [2, 3], [3, 4],
+    [5, 6], [6, 7], [7, 8],
+    [9, 10], [10, 11], [11, 12],
+    [13, 14], [14, 15], [15, 16],
+    [17, 18], [18, 19], [19, 20],
+    [21, 22], [22, 23], [23, 24],
+    [25, 26], [26, 27], [27, 28],
+    [29, 30], [30, 31], [31, 32],
+    [33, 34], [34, 35], [35, 36],
+    [37, 38], [38, 39], [39, 40],
+    [41, 42], [42, 43], [43, 44],
+    [45, 46], [46, 47], [47, 48],
   ];
 
   for (const [start, end] of connections) {
@@ -239,7 +210,6 @@ function drawLandmarks(landmarks) {
     }
   }
 
-  // DRAW POINTS
   ctx.fillStyle = "#00ff99";
 
   for (const point of landmarks) {
