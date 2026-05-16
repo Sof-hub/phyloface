@@ -243,26 +243,7 @@ function analyzeFace(landmarks) {
 }
 
 // GENERATE RESULT
-function generateAnimal() {
-  const animal =
-    animals[Math.floor(Math.random() * animals.length)];
 
-  const score = Math.floor(Math.random() * 20) + 80;
-
-  animalName.innerText = `You Are: ${animal.name}`;
-  animalImage.src = animal.image;
-  animalDescription.innerText = animal.description;
-  scoreText.innerText = `${score}% morphological similarity`;
-
-  resultDiv.classList.remove("hidden");
-
-  const rare = Math.random();
-
-  if (rare < 0.01) {
-    animalName.innerText = "UNCLASSIFIED ENTITY";
-    animalDescription.innerText = "Evolution refuses responsibility.";
-  }
-}
 
 function drawLandmarks(landmarks) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
