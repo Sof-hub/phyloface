@@ -152,36 +152,11 @@ function startFakeAnalysis(landmarks) {
 
 function generateAnimal() {
 
-  let animal;
-
-  // 1% chance rare animal
-
-  if (Math.random() < 0.01) {
-
-    animal =
-      rareAnimals[
-        Math.floor(
-          Math.random() * rareAnimals.length
-        )
-      ];
-
-  } else {
-
-    animal =
-      animals[
-        Math.floor(
-          Math.random() * animals.length
-        )
-      ];
-
-  }
-
-
+  const animal =
+    animals[Math.floor(Math.random() * animals.length)];
 
   const score =
     Math.floor(Math.random() * 20) + 80;
-
-
 
   animalName.innerText =
     `You Are: ${animal.name}`;
@@ -195,9 +170,20 @@ function generateAnimal() {
   scoreText.innerText =
     `${score}% morphological similarity`;
 
-
-
   resultDiv.classList.remove("hidden");
+
+  const rare = Math.random();
+
+  if (rare < 0.01) {
+
+  animalName.innerText =
+    "UNCLASSIFIED ENTITY";
+
+  animalDescription.innerText =
+    "Evolution refuses responsibility.";
+  }
+  
+}
 
 
 
